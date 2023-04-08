@@ -1,0 +1,48 @@
+package com.test05;
+
+import java.util.HashMap;
+
+public class Company {
+
+	public static void main(String[] args) {
+		HashMap<Integer, Employee> map = new HashMap<>();
+		
+		Secretary hong = new Secretary("홍길동",1,"Secretary",800);
+		Sales lee = new Sales("이순신",2,"Sales",1200);
+		
+		map.put(hong.getNumber(), hong);
+		map.put(lee.getNumber(), lee);
+		
+		System.out.println("name"+"           "+"department"+"    "+"salary");
+		System.out.println("-----------------------------------------------");
+		for (Employee emp : map.values()) {
+			System.out.print(emp.getName()+"           "+emp.getDepartment()+"        "+emp.getSalary());
+			System.out.println();
+		}
+		
+		
+		for (Employee emp : map.values()) {
+			if (emp instanceof Secretary) {
+				emp = (Secretary) emp;
+				((Secretary) emp).incentive(100);
+			}
+			else if (emp instanceof Sales) {
+				emp = (Sales) emp;
+				((Sales) emp).incentive(100);
+			}
+		}
+		
+		
+		System.out.println("name"+"           "+"department"+"    "+"salary"+"     tax");
+		System.out.println("----------------------------------------------------------");
+		
+		for (Employee emp : map.values()) {
+			if (emp instanceof Secretary || emp instanceof Sales)
+			System.out.print(emp.getName()+"           "+emp.getDepartment()+"        "+emp.getSalary()+"     "+emp.get);
+			System.out.println();
+		}
+		
+
+	}
+
+}

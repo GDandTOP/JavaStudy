@@ -1,0 +1,22 @@
+package com.test04;
+
+public abstract class Plane {
+	String planeName;
+	int fuelSize;
+	
+	
+	public Plane() {}
+	
+	public Plane(String planeName, int fuelSize) {
+		this.planeName=planeName;
+		this.fuelSize=fuelSize;
+		
+	}
+	
+	public void refule(int fuel) {
+		
+	}
+	
+	
+	public abstract void flight(int distance);
+}

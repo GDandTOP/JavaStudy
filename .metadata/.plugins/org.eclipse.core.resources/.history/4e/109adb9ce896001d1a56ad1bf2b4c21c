@@ -1,0 +1,33 @@
+package Employee;
+
+public class PartTime extends Employee  implements IBusinessTrip{
+
+	int time;
+	int payPerTime;
+	public PartTime(int id, String name, int payPerTime, int time) {
+		super(id, name);
+		this.payPerTime=payPerTime;
+		this.time=time;
+		
+	}
+
+	@Override
+	public String toString() {
+		int pay = payPerTime*time;
+		return super.toString() + ", 급여:"+getPay();
+	}
+
+	
+	public int getPay() {
+		return payPerTime*time;
+	}
+	
+	
+
+
+	@Override
+	public void goBusinessTrip(int day) {
+		// TODO Auto-generated method stub
+		time+=day;
+	}
+}

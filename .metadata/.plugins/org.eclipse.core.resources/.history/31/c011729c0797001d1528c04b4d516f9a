@@ -1,0 +1,73 @@
+package com.test06.biz;
+
+import java.util.Scanner;
+
+import com.test06.entity.Coffee;
+import com.test06.entity.Coke;
+import com.test06.entity.Drink;
+import com.test06.entity.Juice;
+
+public class VendingMachineBiz implements IVendingMachineBiz {
+
+	int balance=1000;
+	Drink[] cartList = new Drink[3];
+	int count = 0;
+	
+	
+	@Override
+	public void cartDrink(Drink drink) {
+		if (balance>drink.getPrice()) {
+			balance-=drink.getPrice();
+		}
+		else {
+			if (drink instanceof Coffee) {
+				System.out.println("잔액이 부족하여 커피 구매 불가능합니다.");
+			}
+			else if (drink instanceof Coke) {
+				System.out.println("콜라를 구입했습니다.현재 잔액"+ drink.getPrice()+" 원" );
+			}
+			else if (drink instanceof Juice) {
+				System.out.println("쥬스를 구입했습니다.현재 잔액"+ drink.getPrice()+" 원" );
+			}
+		}
+		
+		if (drink instanceof Coffee) {
+			System.out.println("커피를 구입했습니다.현재 잔액"+ drink.getPrice()+" 원" );
+		}
+		else if (drink instanceof Coke) {
+			System.out.println("콜라를 구입했습니다.현재 잔액"+ drink.getPrice()+" 원" );
+		}
+		else if (drink instanceof Juice) {
+			System.out.println("쥬스를 구입했습니다.현재 잔액"+ drink.getPrice()+" 원" );
+		}
+		cartList[count++]=drink;
+	}
+
+	@Override
+	public void printCart() {
+		for (int i=0; i<count; i++)
+		{
+			if (cartList[i] instanceof Coffee) {
+				System.out.println((Coffee)cartList[i]);
+			}
+			else if (cartList[i] instanceof Coke) {
+				System.out.println((Coke)cartList[i]);
+			}
+			if (cartList[i] instanceof Juice) {
+				System.out.println((Juice)cartList[i]);
+			}
+		}
+		
+		
+	}
+
+	@Override
+	public void printDrinkList(Drink[] drinkList) {
+		
+		
+	}
+
+}
+
+
+

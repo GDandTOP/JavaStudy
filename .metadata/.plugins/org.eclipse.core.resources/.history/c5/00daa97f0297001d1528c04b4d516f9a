@@ -1,0 +1,5 @@
+package com.test06.entity;
+
+public class Coffee {
+	final int COFFEE PRICE = 100;
+}

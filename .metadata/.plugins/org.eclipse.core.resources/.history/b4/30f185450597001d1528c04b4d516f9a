@@ -1,0 +1,39 @@
+package com.test06.biz;
+
+import java.util.Scanner;
+
+
+import com.test06.entity.Drink;
+
+public class VendingMachineBiz implements IVendingMachineBiz {
+
+	int balance;
+	Drink[] cartList = new Drink[3];
+	int count = 0;
+	
+	
+	@Override
+	public void cartDrink(Drink drink) {
+		cartList[count++]=drink;
+	}
+
+	@Override
+	public void printCart() {
+		for (int i=0; i<count; i++)
+		{
+			System.out.println(cartList[i]);
+		}
+		
+		
+	}
+
+	@Override
+	public void printDrinkList(Drink[] drinkList) {
+		
+		
+	}
+
+}
+
+
+

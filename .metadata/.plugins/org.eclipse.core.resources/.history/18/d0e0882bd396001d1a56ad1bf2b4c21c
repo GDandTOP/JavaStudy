@@ -1,0 +1,18 @@
+package vo;
+
+public class User {
+	private Integer id;
+	private Integer name;
+	private Integer email;
+	private Integer address;
+	private Integer tel;
+	
+	public User() {}
+	public User(Integer id, String name, String email, String address, String tel) {
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.address = address;
+		this.tel = tel;
+	}
+}

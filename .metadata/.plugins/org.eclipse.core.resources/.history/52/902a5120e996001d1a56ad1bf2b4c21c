@@ -1,0 +1,30 @@
+package Employee;
+
+public class Sales extends Permanent implements IBusinessTrip {
+
+
+	private int incentive;
+	public Sales(int id, String name, int pay, int incentive ) {
+		super(id, name,pay);
+		this.incentive=incentive;
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public String toString() {
+		return "사번 : "+getId()+", 이름 : "+getName()+", 급여 : "+getPay();
+	}
+	
+	public int getPay() {
+		return this.pay;
+	}
+
+	
+
+
+	@Override
+	public void goBusinessTrip(int day) {
+		// TODO Auto-generated method stub
+		this.incentive+=100000*day;
+	}
+}

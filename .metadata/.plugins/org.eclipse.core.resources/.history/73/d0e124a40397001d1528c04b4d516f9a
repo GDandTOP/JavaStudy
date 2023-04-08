@@ -1,0 +1,15 @@
+package com.test06.entity;
+
+public class Juice extends Drink {
+
+	static final int JUICE_PRICE = 50;
+	
+	public JUICE() {
+		super(JUICE_PRICE);
+	}
+	
+	@Override
+	public String toString() {
+		return "쥬스 가격은 "+JUICE_PRICE;
+	}
+}

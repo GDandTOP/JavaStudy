@@ -1,0 +1,13 @@
+import dao.DBConnect;
+
+public class ProjMain {
+	public static void insert() {
+		DBConnect db = new DBConnect();
+		db.conClose();
+	}
+	public static void main(String[] args) {
+
+	}
+	
+
+}

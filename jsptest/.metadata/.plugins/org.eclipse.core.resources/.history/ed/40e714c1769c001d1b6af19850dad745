@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<center>
+<table border="1">
+	<tr>
+		<th>계좌번호</th><th>이름</th><th>입금액</th>
+	</tr>
+</table>
+<a href="accproduct.jsp">계좌 등록하기</a>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+package dao;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Properties;
+
+
+import vo.User;
+
+public class DBConnect {
+	Connection conn ;
+	
+	public void connect() {
+		FileInputStream fis = null;
+		try {
+			fis = new FileInputStream("db.properties");
+			Properties dbprop = new Properties();
+			dbprop.load(fis);
+			String driver=dbprop.getProperty("driver");
+			String url=dbprop.getProperty("url");
+			String user=dbprop.getProperty("user");
+			String password=dbprop.getProperty("password");
+			Class.forName(driver);
+			conn=DriverManager.getConnection(url,user,password);
+		}
+		
+		catch(IOException e) {
+			e.printStackTrace();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(fis!=null) fis.close();
+			} catch(IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	public void insert2(User user) {
+		String sql = "insert into user values(?,?,?,?,?,?)";
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, user.getId());
+			pstmt.setString(2, user.getName());
+			pstmt.setString(3, user.getEmail());
+			pstmt.setDate(4, user.getJoindate());
+			pstmt.setString(5, user.getAddress());
+			pstmt.setString(6, user.getTel());
+			int cnt = pstmt.executeUpdate();
+			if(cnt>0) 
+			{
+				System.out.println(cnt+"개 데이터를 삽입했습니다.");
+			}
+				
+		} catch(SQLException e){
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt!=null) pstmt.close();
+			} catch(SQLException e) {
+				e.printStackTrace();
+			}
+			
+		}
+	}
+	
+	public void insert(User user) {
+		String sql = "insert into user values("+user.getId()+",'"+user.getName()+
+				"','"+user.getEmail()+"','"+user.getJoindate()+"','"+user.getAddress()+"','"+user.getTel()+"')";
+		Statement stmt= null;
+		try {
+			stmt = conn.createStatement();
+			int cnt = stmt.executeUpdate(sql);
+			
+			if (cnt>0) {
+				System.out.println("SQL : "+sql);
+				System.out.println(cnt+"개 데이터가 삽입되었습니다.");
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(stmt!=null) stmt.close();
+			} catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public void conClose() {
+		try {
+			if(conn!=null) conn.close();
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+
+}

@@ -1,0 +1,30 @@
+package com.test03;
+
+public class TestMain03 {
+
+	public static void main(String[] args) {
+		String str = "1.22,4.12,5.93,8.71,9.34";
+		
+		String[] list = str.split(",");
+		
+		int cnt = list.length;
+		double sum = 0;
+		
+		
+		double avg = 0;
+		
+		
+		
+		for (String num : list) {
+			sum+=Double.parseDouble(num);
+		}
+		avg = sum/cnt;
+		
+		sum= (sum*1000.0)/1000.0;
+		
+		System.out.println("합 계 : "+sum);
+		System.out.println("평 균 : "+avg);
+		
+	}
+
+}

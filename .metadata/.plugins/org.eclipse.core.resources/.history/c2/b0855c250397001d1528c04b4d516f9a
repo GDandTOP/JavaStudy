@@ -1,0 +1,9 @@
+package com.test06.entity;
+
+public class Coffee extends Drink {
+	private static final int COFFEE_PRICE = 0;
+	
+	public Coffee() {
+		super(COFFEE_PRICE);
+	}
+}

@@ -1,0 +1,14 @@
+package com.test06.entity;
+
+public class Coke extnends Drink {
+	final int COKE_PRICE = 50;
+	
+	public Coke() {
+		super(Coke_PRICE);
+	}
+	
+	@Override
+	public String toString() {
+		return "커피 가격은 "+COFFEE_PRICE;
+	}
+}

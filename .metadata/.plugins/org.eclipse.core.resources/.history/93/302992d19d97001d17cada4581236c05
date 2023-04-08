@@ -1,0 +1,28 @@
+import java.sql.Date;
+
+import java.util.Calendar;
+
+import dao.DBConnect;
+import vo.User;
+
+public class ProjMain {
+	public static void insert(User user) {
+		DBConnect db = new DBConnect();
+		db.connect();
+		db.insert(user);
+		db.conClose();
+	}
+	
+	public static void insert2(User user) {
+		DBConnect db = new DBConnect();
+		db.connect();
+		db.insert2(user);
+		db.conClose();
+	}
+	
+	public static void main(String[] args) {
+		insert2(new User(111,"권지용","cha@kt.com",new Date((Calendar.getInstance().getTime()).getTime()),"경기도 과천시","010-2222-1111"));
+	}
+	
+
+}

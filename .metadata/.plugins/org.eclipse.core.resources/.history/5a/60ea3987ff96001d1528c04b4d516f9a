@@ -1,0 +1,25 @@
+package com.test05;
+
+import java.util.HashMap;
+
+public class Company {
+
+	public static void main(String[] args) {
+		HashMap<Integer, Employee> map = new HashMap<>();
+		
+		Secretary hong = new Secretary("홍길동",1,"Secretary",800);
+		Sales lee = new Sales("이순신",2,"Sales",1200);
+		
+		map.put(hong.getNumber(), hong);
+		map.put(lee.getNumber(), lee);
+		
+		System.out.println("name"+"                "+"department"+"    "+"salary");
+		for (Employee emp : map.values()) {
+			System.out.println(emp.getName());
+		}
+		
+		
+
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.test05;
+
+public class Company {
+
+	public static void main(String[] args) {
+		HashMap<Integer, Employee> map =
+				new HashMap<>();
+
+	}
+
+}

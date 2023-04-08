@@ -1,0 +1,81 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import acc.Account;
+import acc.SpecialAccount;
+public class Bank {
+
+		ArrayList<Account> accs = new ArrayList<>();
+//		Account[] accs = new Account[100];
+		int count=0;
+		
+		void makeAccount(Account acc) {
+//			accs[count++]= acc;
+			accs.add(acc);
+		}
+		
+		void printAllAccount() {
+//			for (int i=0; i<count; i++) {
+			for (Account acc : accs) {
+				System.out.println(acc.info());
+			}
+		}
+		
+		void printSpecialAccount() {
+			Iterator<Account> it = accs.iterator();
+			while(it.hasNext())
+			{
+				Account acc = it.next();
+				if (acc instanceof SpecialAccount)
+				{
+					System.out.println(acc.info());	
+				}
+				
+			}
+			
+			
+//			for (int i=0; i<count; i++)
+//			{
+//				if (accs[i] instanceof SpecialAccount) {
+//					System.out.println(accs[i].info());
+//				}
+//			}
+		}
+		
+		void printSpecialAccount(String grade) {
+			for (Account acc: accs) {
+				if(acc instanceof SpecialAccount) {
+					if(((SpecialAccount)acc).equals(grade)) {
+						System.out.println(acc.info());
+					}
+				}
+			}
+		
+//			
+//			for (int i=0; i<count; i++)
+//			{
+//				if (accs[i] instanceof SpecialAccount ) {
+//					
+//					SpecialAccount a1 = (SpecialAccount)accs[i]; // downcasting?
+//					if (a1.getGrade().equals(grade))
+//					{
+//						System.out.println(accs[i].info());
+//					}
+//				}
+//			}
+		}
+		
+		void printAccount() {
+			Iterator<Account> it = accs.iterator();
+			while(it.hasNext()) {
+				Account acc = it.next();
+				if(!(acc instanceof SpecialAccount))
+				{
+					System.out.println(acc.info());
+				}
+			}
+			
+
+		}
+	
+}

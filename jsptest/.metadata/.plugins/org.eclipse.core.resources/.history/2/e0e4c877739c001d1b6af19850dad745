@@ -1,0 +1,5 @@
+package com.kr.vo;
+
+public class Account {
+
+}

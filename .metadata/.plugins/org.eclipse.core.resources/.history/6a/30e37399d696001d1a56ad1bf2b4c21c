@@ -1,0 +1,16 @@
+import dao.DBConnect;
+import vo.User;
+
+public class ProjMain {
+	public static void insert(User user) {
+		DBConnect db = new DBConnect();
+		db.connect();
+		db.insert(user);
+		db.conClose();
+	}
+	public static void main(String[] args) {
+		insert(new User(103,"차길동","cha@kt.com","경기도 과천시","010-2222-1111"));
+	}
+	
+
+}

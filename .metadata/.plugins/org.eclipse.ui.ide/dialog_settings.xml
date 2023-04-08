@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\ktds\Desktop\YoungukJava\java_workspace\DBProj_master"/>
+			<item value="C:\Users\ktds\Desktop\YoungukJava\java_workspace\EmployeeProjTwo"/>
+			<item value="C:\Users\ktds\Desktop\YoungukJava\java_workspace\Shopping"/>
+			<item value="C:\Users\ktds\Desktop\YoungukJava\java_workspace\java-work"/>
+			<item value="C:\Users\ktds\Desktop\YoungukJava\java_workspace\EmployeeProj"/>
+			<item value="C:\Users\ktds\Desktop\YoungukJava\java_workspace\DBProj"/>
+			<item value="C:\Users\ktds\Desktop\YoungukJava\java_workspace\0116"/>
+			<item value="C:\Users\ktds\Desktop\java_workspace\0113"/>
+			<item value="C:\Users\ktds\Desktop\java_workspace\0112"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+		</list>
+	</section>
+</section>

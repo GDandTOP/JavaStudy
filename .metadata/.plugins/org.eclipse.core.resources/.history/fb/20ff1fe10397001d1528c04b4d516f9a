@@ -1,0 +1,5 @@
+package com.test06.biz;
+
+public interface IVendingMachineBiz {
+
+}

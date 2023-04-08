@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>쿠키를 이용한 화면 설정 예제</title>
+</head>
+<body>
+<form action="cookieexam" method="post">
+	<input type="radio" name="Language" value="korea"/>
+	<input type="radio" name="Language" value="english"/>
+	<input type="submit" value="설정"/>
+</form>
+</body>
+</html>

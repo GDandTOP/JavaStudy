@@ -1,0 +1,56 @@
+package com.test06;
+
+import java.util.Scanner;
+
+
+import com.test06.biz.VendingMachineBiz;
+import com.test06.entity.Coffee;
+import com.test06.entity.Coke;
+import com.test06.entity.Drink;
+import com.test06.entity.Juice;
+
+public class VendingMachineTest {
+
+	
+	static Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) throws Exception {
+		
+		VendingMachineBiz machine = new VendingMachineBiz();
+		
+
+		
+		while(true) {
+			try {
+				menu();
+				int sel = Integer.parseInt(sc.nextLine());
+				if(sel==9) break;
+				switch(sel) {
+				case 1: machine.printDrinkList(new Drink[] {new Coffee(),new Coke(),new Juice()});
+				case 2: machine.cartDrink(new Juice());
+				case 3: machine.cartDrink(new Coffee());
+				case 4: machine.cartDrink(new Coke());
+				case 5: machine.printCart();
+				default : System.out.println("다시 입력하세요.");
+			}} catch(NullPointerException e) {
+				System.out.println("1차 처리 다시 입력하는게 좋을듯 싶군...");
+				throw new Exception("다시 생성");
+			} catch(Exception e) {
+				System.out.println("오우 이건 진짜 다시 입력해라...");
+			}
+		}
+
+	}
+	public static void menu() {
+		System.out.println("=============================");
+		System.out.println("[음료수 자판기 관리 시스템]");
+		System.out.println("1.전체 음료수 및 잔액 보기");
+		System.out.println("2.쥬스 구입하기 (200원)");
+		System.out.println("3.커피 구입하기 (100원)");
+		System.out.println("4.코크 구입하기 (50원)");
+		System.out.println("5.구입한 음료수 목록 보기");
+		System.out.println("9. 종료");
+		System.out.println();
+		System.out.println("=============================");
+		System.out.print("메뉴 입력 => ");
+	}
+}

@@ -1,0 +1,10 @@
+package com.test02;
+
+public class TestStudent {
+
+	public static void main(String[] args) {
+		Student[] studentList= new Student[3];
+
+	}
+
+}

@@ -1,0 +1,21 @@
+package com.test04;
+
+public class PlaneTest {
+
+	public static void main(String[] args) {
+		Airplane a = new Airplane("L777",1000);
+		Cargoplane b = new Cargoplane("C50",1000);
+		
+		
+		System.out.println("Plane fuelSize");
+		System.out.println("----------------------");
+		System.out.println(a.planeName+" "+a.fuelSize);
+		System.out.println(b.planeName+" "+b.fuelSize);
+		a.flight(100);
+		b.flight(100);
+		System.out.println(100 +" 운항");
+		
+		
+	}
+
+}
